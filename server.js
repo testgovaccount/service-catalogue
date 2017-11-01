@@ -35,9 +35,7 @@ request.onload = function() {
 app.locals.data = [];
 _.each(files,function(el)
 {
-  if (id == key) {
-    livervice == "https://gov.uk" + hostname;
-  }
+
   if (el == 'defaults.json') return;
   var file = fs.readFileSync(__dirname + '/lib/projects/'+el).toString();
   try {
