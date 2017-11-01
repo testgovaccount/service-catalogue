@@ -18,9 +18,26 @@ var path        = require('path'),
 */
 var defaults = JSON.parse(fs.readFileSync(__dirname + '/lib/projects/defaults.json').toString());
 var files = fs.readdirSync(__dirname + '/lib/projects/');
+var requestURL = 'https://government-service.register.gov.uk/records.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+
+request.responseType = 'json';
+request.send();
+
+request.onload = function() {
+  var serviceregisterresponse = request.response;
+  key(key);
+  hostname(hostname);
+  governmentorganisation(governmentorganisation);
+}
+
 app.locals.data = [];
 _.each(files,function(el)
 {
+  if (id == key) {
+    livervice == "https://gov.uk" + hostname;
+  }
   if (el == 'defaults.json') return;
   var file = fs.readFileSync(__dirname + '/lib/projects/'+el).toString();
   try {
